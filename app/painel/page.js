@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react";
 import "./painel.css"
+import Produtos from "../produtos/page";
 
 
 
@@ -15,12 +16,23 @@ function Painel () {
         
         
         if (nomeUser=="Rodrigo" && senhaUser=="1577" ){
-            console.log ("Login efetuado com sucesso.")
+
+            alteraMostraErro(false)
+            alteraMostraSucesso(true)
             
+            
+        }else if(usuario ==""&& senha ==""){
+
+            alteraMostraErro(true) 
+            alteraMostraSucesso(false)
+        
+        
         }else{
-            console.log ("Usuário ou senha incorreto")
+
+            alteraMostraErro(true)
+            alteraMostraSucesso(false)
         }
-    }
+    
     
     return ( 
         <div>
@@ -51,13 +63,25 @@ function Painel () {
                     </div>
                 :
                     <div></div>
+
+                    
                     
             }
-            
+
+             {
+             <div>
+                mostraErro == true ?
+                    <div className="sucesso">
+                        <p> Usuário logado com sucesso! </p>
+                    </div>
+                    :
+                </div>
+                
+            }
 
 
         </div>
      );
 }
-
+}
 export default Painel ;

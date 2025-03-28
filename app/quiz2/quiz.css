@@ -1,0 +1,6 @@
+.selecionado{
+    color: rgb(255, 0, 0);
+    border: 1px solid grey;
+    padding: 10px;
+    width: 200px;
+}   
